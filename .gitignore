@@ -196,3 +196,7 @@ tags
 Icon[
 ]
 desktop.ini
+
+# Generated PDFs
+main.pdf
+mainFinal.pdf
