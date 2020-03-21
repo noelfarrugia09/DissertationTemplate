@@ -1,0 +1,96 @@
+% Generate the PDF in version 1.7
+\pdfminorversion=7
+
+% Set 1.5 line spacing
+\usepackage{setspace}
+\onehalfspacing
+
+% Set the margins of 25mm for top, bottom, right and the left margin for 37mm
+% to cater for binding
+\usepackage[a4paper, top=25mm, bottom=25mm, right=25mm, left=37mm]{geometry}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+
+% To insert figures
+\usepackage{graphicx}
+
+\usepackage[above, below]{placeins}
+
+% For matrices
+\usepackage{blkarray}
+
+% Math symbols and equation references
+\usepackage{amsmath, amssymb, mathtools}
+
+% For managing glossaries and acronyms
+\usepackage[automake,acronym]{glossaries}
+
+% For displaying URLs correctly
+\usepackage{url}
+
+% Remove indentation and have a bit of space between paragraphs
+\usepackage{parskip}
+
+% Table configuration
+\usepackage{booktabs}
+\usepackage{multirow}
+
+% Algorithm writing
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% Uom Red
+\usepackage{xcolor}
+\definecolor{umRed}{RGB}{186, 12, 47}
+
+% Use BibLaTeX to generate references
+\usepackage[bibstyle=ieee,citestyle=numeric-comp]{biblatex}
+
+% Set captions to have a font size of 10pt assuming the document has a default
+% of 12pt.
+\usepackage[font=footnotesize,labelfont=bf]{caption}
+\usepackage[labelformat=simple]{subcaption}
+% Add parentheses when referring to sub-figures
+\renewcommand\thesubfigure{(\alph{subfigure})}
+
+% Header & Footer configuration
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+
+\fancypagestyle{pageNumbersOnly}
+{
+    \fancyhf{}
+    \rhead{}
+    \lhead{}
+    \cfoot{\fancyplain{}{\thepage}}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+
+\fancypagestyle{MainMatter}
+{
+    \fancyhf{}
+    \rhead{\fancyplain{}{\rightmark}}
+    \lhead{\fancyplain{}{\leftmark }}
+    \cfoot{\fancyplain{}{\thepage}}
+    \renewcommand{\headrulewidth}{2pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+
+% Hyperlink generation in the PDF file
+\usepackage[hidelinks,pdfusetitle,pageanchor=false]{hyperref}
+
+% Set the header length to make it consistent throughout the document
+\setlength{\headheight}{15.8pt}
+
+% Math operators
+\DeclareMathOperator{\argmin}{arg\,min}
+\DeclareMathOperator{\argmax}{arg\,max}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+% Update the table of contents name (when using babel)
+\addto\captionsenglish{\renewcommand{\contentsname}{Table Of Contents}}

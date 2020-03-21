@@ -1,0 +1,52 @@
+\documentclass[12pt, a4paper, oneside, openany]{book}
+
+\usepackage{uomThesisStyle}
+\addbibresource{references.bib}
+
+\title{Title of the PDF}
+\author{Author Name}
+\date{\today}
+
+\makeglossaries{}
+\input{glossary}
+\input{acronym}
+
+\glsaddall{}
+
+\begin{document}
+
+    \frontmatter
+    \pagestyle{pageNumbersOnly}
+
+    \input{titlePage}
+
+    \input{copyrightNotice}
+    \input{acknowledgements}
+    \input{abstract}
+
+    \tableofcontents
+
+    \listoffigures
+    \listoftables
+
+    \printglossary[type=\acronymtype,nonumberlist,title=List of Acronyms]
+    \printglossary[nonumberlist,title=Glossary of Symbols]
+
+    \mainmatter{}
+    \pagestyle{MainMatter}
+
+    \input{Chapters/Introduction/introduction}
+    \input{Chapters/Conclusion/conclusion}
+
+    \clearpage
+
+    \pagestyle{pageNumbersOnly}
+    \printbibliography[title=References]
+
+    \clearpage
+
+    \pagestyle{MainMatter}
+    \appendix
+    \input{Chapters/Appendices/appendices}
+
+\end{document}
